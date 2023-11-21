@@ -5,6 +5,16 @@ on:
     branches:
     - test
   pull_request:
+  
+  workflow_dispatch:
+      inputs:
+        action:
+          description: Action
+          required: true
+          default: create
+          options:
+            - create
+            - destroy
  
 jobs:
   terraform:
